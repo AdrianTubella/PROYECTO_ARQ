@@ -1,0 +1,365 @@
+/* ===== VARIABLES: PALETA PROFESIONAL ===== */
+:root {
+    --primary: #0d2b45;       /* Azul noche (autoridad) */
+    --secondary: #1e567c;     /* Azul acero (sabiduría) */
+    --accent: #c43e32;        /* Rojo alerta (acción crítica) */
+    --success: #2d7d5f;       /* Verde soberanía (resiliencia) */
+    --light: #f5f8fa;         /* Fondo claro */
+    --gray: #5a636e;          /* Texto secundario */
+    --dark: #1a1a1a;          /* Texto principal */
+    --border-radius: 10px;
+    --shadow: 0 6px 16px rgba(13, 43, 69, 0.12);
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  /* ===== BASE ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background-color: #fafbfd;
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* ===== TYPOGRAFÍA ===== */
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary);
+  }
+  
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 2rem; margin: 2rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--secondary); }
+  h3 { font-size: 1.5rem; margin: 1.8rem 0 1rem; }
+  h4 { font-size: 1.25rem; margin: 1.4rem 0 0.8rem; }
+  
+  p { margin-bottom: 1.2rem; }
+  ul { margin: 1rem 0 1.5rem 2rem; }
+  li { margin-bottom: 0.6rem; }
+  
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, var(--primary), #1a3a5f);
+    color: white;
+    padding: 2.5rem 0;
+    box-shadow: 0 4px 20px rgba(13, 43, 69, 0.18);
+  }
+  
+  .header-content {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .header h1 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto 1.2rem;
+  }
+  
+  .meta {
+    font-size: 1.05rem;
+    opacity: 0.85;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .authors {
+    display: block;
+    font-weight: 600;
+    margin-top: 0.4rem;
+    letter-spacing: 0.5px;
+  }
+  
+  /* ===== NAVEGACIÓN ===== */
+  .nav-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  
+  .nav-btn {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(4px);
+  }
+  
+  .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .nav-btn.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 4px 12px rgba(30, 86, 124, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  /* ===== MAIN ===== */
+  .main {
+    padding: 2.5rem 0 3rem;
+  }
+  
+  .section {
+    display: none;
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .section.active {
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== RESUMEN GENERAL ===== */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 24px;
+    margin: 2rem 0;
+  }
+  
+  .summary-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  
+  .summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(13, 43, 69, 0.18);
+  }
+  
+  .summary-icon {
+    background: var(--secondary);
+    color: white;
+    font-size: 2.2rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+  }
+  
+  .summary-card h3 {
+    text-align: center;
+    padding: 0 1.5rem 1rem;
+    color: var(--primary);
+    font-size: 1.4rem;
+  }
+  
+  .summary-content {
+    padding: 0 1.8rem 1.8rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .synthesis {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border-left: 4px solid var(--secondary);
+  }
+  
+  .synthesis h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .synthesis p {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ===== TARJETAS DE LIBRO ===== */
+  .book-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2.2rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--secondary);
+    transition: var(--transition);
+  }
+  
+  .book-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(13, 43, 69, 0.15);
+  }
+  
+  .book-card h3 {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .book-card small {
+    display: block;
+    font-weight: 600;
+    color: var(--gray);
+    font-size: 1.05rem;
+    margin-top: 0.3rem;
+  }
+  
+  .deep-list {
+    background: #f8fbff;
+    border-left: 3px solid var(--secondary);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    margin: 1.4rem 0;
+  }
+  
+  .deep-list li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 24px;
+  }
+  
+  .deep-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--success);
+    font-weight: bold;
+  }
+  
+  .quote {
+    font-style: italic;
+    background: #fffaf5;
+    border-left: 4px solid var(--accent);
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    margin: 1.5rem 0;
+    color: var(--dark);
+    font-size: 1.1rem;
+  }
+  
+  .quote:before {
+    content: "“";
+    font-size: 2.5rem;
+    color: var(--accent);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+  }
+  
+  /* ===== CONCLUSIÓN ===== */
+  .conclusion {
+    background: #f0f9f7;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border-left: 5px solid var(--success);
+  }
+  
+  .conclusion-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .conclusion-list li {
+    background: white;
+    margin: 0.6rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .conclusion-list li:before {
+    content: "•";
+    color: var(--success);
+    font-size: 2rem;
+    line-height: 0;
+  }
+  
+  /* ===== PLACEHOLDERS (para secciones futuras) ===== */
+  .section-placeholder {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--gray);
+  }
+  
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+  }
+  
+  /* ===== IMPRESIÓN ===== */
+  @media print {
+    .nav-main, .footer { display: none !important; }
+    .header { box-shadow: none; background: #0d2b45 !important; }
+    body { background: white; }
+    .book-card, .summary-card { box-shadow: none; border: 1px solid #ddd; }
+    .deep-list, .quote, .conclusion { border: 1px solid #eee; }
+    a { text-decoration: none; color: var(--primary); }
+  }
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .summary-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 2rem; }
+    .subtitle { font-size: 1.2rem; }
+    .nav-btn { padding: 0.6rem 1rem; font-size: 0.95rem; }
+    .book-card, .summary-card { padding: 1.5rem; }
+  }
+  
+  /* ===== ACCESIBILIDAD ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
