@@ -363,3 +363,52 @@
       transition-duration: 0.01ms !important;
     }
   }
+  /* ===== RESPONSIVE CRÍTICO — AGREGAR AL FINAL DE style.css ===== */
+
+/* Teléfonos pequeños (portrait) */
+@media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .header h1 { font-size: 1.8rem; }
+    .subtitle { font-size: 1.15rem; }
+    .nav-btn { 
+      padding: 0.5rem 0.8rem; 
+      font-size: 0.9rem;
+      flex: 1 1 45%;
+    }
+    .summary-grid, .grid-2 { grid-template-columns: 1fr; }
+    .book-card, .tech-card, .summary-card { padding: 1.4rem; }
+    .architecture .layer { padding: 0.8rem; }
+  }
+  
+  /* Teléfonos grandes / Tablets pequeñas */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .summary-grid, .grid-2 { grid-template-columns: 1fr; }
+    .nav-btn { flex: 1 1 30%; }
+  }
+  
+  /* Tablets grandes / laptops pequeñas */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .summary-grid { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .container { max-width: 900px; }
+  }
+  
+  /* Touch targets accesibles (WCAG) */
+  .nav-btn, .print-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Texto legible en móviles */
+  body {
+    font-size: 16px; /* Mínimo para accesibilidad */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Evita zoom accidental en inputs */
+  input, textarea, select, button {
+    font-size: 16px;
+  }
